@@ -1,9 +1,9 @@
 # The Water Framework REST API
-The Water Framework REST API can deploy vast amounts of data about water, soil, snow and vegetation.    
+The Water Framework REST API can deploy vast amounts of data about water, soil, snow and vegetation.    This API follows the NOAA API format and structure.  
 
 ## API Structure
 
-**BASE URL** | **MATERIAL** | **TYPE** | **PRODUCT** | STATION | DATE | UNITS | TIME_ZONE | INTERVAL | FORMAT
+**BASE URL** | **MATERIAL** | **TYPE** | **PRODUCT** | STATION | DATE | UNITS | TIME_ZONE | INTERVAL | FORMAT | KEY
 
 ```yaml
 GET:
@@ -84,7 +84,7 @@ The ​**station** ​references which sensor unit or range of units to pull dat
 
 # Date & Time
 
-The ​**date** ​will allow for many different ranges and formats for the interval of time of data to be sent. We follow the NOAA API Format for the date and time.  
+The ​**date** ​will allow for many different ranges and formats for the interval of time of data to be sent. 
 
 The API understands several parameters related to date ranges.  
 All dates can be formatted as follows:  
