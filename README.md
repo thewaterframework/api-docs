@@ -1,7 +1,28 @@
 # The Water Framework REST API
-The science behind the divirod ground sensor network.  
+The Water Framework REST API can deploy vast amounts of data about water, soil, snow and vegetation.    
 
+## The API Structure
 
+```yaml
+GET:
+  https://thewaterframework.com/api/v1:
+  
+    material: water
+    data_type: data
+    product_water: ["water_level"], ["water_capacity"], ["tide"],["tide_current"],["wave_height"],["ice_layer"],["snow_layer"]
+    
+    material: land
+    data_type: data
+    product_land: ["soil_moisture"], ["veg_height"], ["veg_density"],["snow_accum"],["snow_density"],["snow_water"],["topology"]
+    
+  options:
+    station: station, range, all
+    date: ['*/*'] # numerous options available
+    units: metric, standard
+    time_zone: gst, lst, lst_dst
+    interval: h, hilo
+    format: json, xml, csv
+```
 # Water Data Products
 
 The ​**product**​ represents attributes of water data.  Specify the type of data with the "product=" option parameter.
@@ -16,18 +37,6 @@ The ​**product**​ represents attributes of water data.  Specify the type of 
 | wave_height | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
 | ice_layer | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
 | snow_layer | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
-
-```yaml
-types:
-  userPicture:
-    type: file
-    fileTypes: ['image/jpeg', 'image/png']
-    maxLength: 307200
-  customFile:
-    type: file
-    fileTypes: ['*/*'] # any file type allowed
-    maxLength: 1048576
-```
 
 # Land Data Products
 
@@ -44,17 +53,6 @@ The ​**product**​ represents attributes of water data.  Specify the type of 
 | snow_water | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `cm` <br />**Standard:** `inches`
 | topology | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M (x,y,z)` <br />**Standard:** `Ft. (x,y,z)`
 
-```yaml
-types:
-  userPicture:
-    type: file
-    fileTypes: ['image/jpeg', 'image/png']
-    maxLength: 307200
-  customFile:
-    type: file
-    fileTypes: ['*/*'] # any file type allowed
-    maxLength: 1048576
-```
 
 # Station ID# or Range
 
