@@ -28,7 +28,7 @@ GET:
 
 ### Example API Requests:
 
-https://thewaterframework.com/api/v1/water/data/waterlevel?station=3&date=today&units=metric&format=csv&authkey=KEY
+thewaterframework.com/api/v1/water/data/waterlevel?station=3&date=today&units=metric&format=csv&authkey=KEY
 
 # Water Data Products
 
