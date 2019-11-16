@@ -1,11 +1,13 @@
 # The Water Framework REST API
 The Water Framework REST API can deploy vast amounts of data about water, soil, snow and vegetation.    
 
-## The API Structure
+## API Structure
+
+**BASE URL** | **MATERIAL** | **TYPE** | **PRODUCT** | STATION | DATE | UNITS | TIME_ZONE | INTERVAL | FOMAT
 
 ```yaml
 GET:
-  https://thewaterframework.com/api/v1:
+  https://thewaterframework.com/api/v1/:
   
     material: water
     data_type: data
@@ -23,6 +25,11 @@ GET:
     interval: h, hilo
     format: json, xml, csv
 ```
+
+### Example API Requests:
+
+thewaterframework.com/api/v1/water/data/waterlevel?station=3&date=today&units=metric&format=csv&authkey=KEY
+
 # Water Data Products
 
 The ​**product**​ represents attributes of water data.  Specify the type of data with the "product=" option parameter.
@@ -166,7 +173,7 @@ The ​**time_zone** is where the sensor data will reference from.  The time_zon
 
 # Interval
 
-The ​**interval** decides how much data is sent per time request.  The default is 6 minute interval and there is no need to specify it. The hourly interval is supported for Met data and Predictions data only. The output format can be specified with the "interval=" option parameter.
+The ​**interval** decides how much data is sent per time request.  **The default is 6 minute interval** and there is no need to specify it. The hourly interval is supported for Met data and Predictions data only. The output format can be specified with the "interval=" option parameter.
 
 | Option | Description |
 |:--------|:------------|
