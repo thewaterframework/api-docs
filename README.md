@@ -7,8 +7,11 @@ The Water Framework REST API can deploy vast amounts of data about water, soil, 
 
 ```yaml
 GET:
-  https://thewaterframework.com/api/v1/:
+
+  base_url:
+    https://thewaterframework.com/api/v1/:
   
+  data:  
     material: water
     data_type: data
     product: ["water_level"], ["water_capacity"], ["tide"],["tide_current"],["wave_height"],["ice_layer"],["snow_layer"]
@@ -24,6 +27,9 @@ GET:
     time_zone: gst, lst, lst_dst
     interval: h, hilo
     format: json, xml, csv
+    
+  authentication:
+    auth_key: ["AUTH_KEY"]
 ```
 
 ### Example API Requests:
