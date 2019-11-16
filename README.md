@@ -9,11 +9,11 @@ GET:
   
     material: water
     data_type: data
-    product_water: ["water_level"], ["water_capacity"], ["tide"],["tide_current"],["wave_height"],["ice_layer"],["snow_layer"]
+    product: ["water_level"], ["water_capacity"], ["tide"],["tide_current"],["wave_height"],["ice_layer"],["snow_layer"]
     
     material: land
     data_type: data
-    product_land: ["soil_moisture"], ["veg_height"], ["veg_density"],["snow_accum"],["snow_density"],["snow_water"],["topology"]
+    product: ["soil_moisture"], ["veg_height"], ["veg_density"],["snow_accum"],["snow_density"],["snow_water"],["topology"]
     
   options:
     station: station, range, all
