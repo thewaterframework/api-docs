@@ -37,13 +37,13 @@ The ​**product**​ represents attributes of water data.  Specify the type of 
 
 | Product | Description |
 |:--------|:------------|
-| water_level | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
-| water_capacity | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M^3` <br />**Standard:** `Acre Ft.`
-| tide | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
-| tide_current | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M/s` <br />**Standard:** `Ft./s`
-| wave_height | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
-| ice_layer | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
-| snow_layer | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| water_level | Specifies the current height of the visible water.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| water_capacity | Specifies the capacity of the visible water.<br /><br />**Metric:** `M^3` <br />**Standard:** `Acre Ft.`
+| tide | Specifies the height of the current tide.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| tide_current | Specifies the speed of the current tide.<br /><br />**Metric:** `M/s` <br />**Standard:** `Ft./s`
+| wave_height | Specifies the height of the current wave.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| ice_layer | Specifies the thickness of the current ice layer.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| snow_layer | Specifies the thickness of the current snow layer.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
 
 # Land Data Products
 
@@ -52,13 +52,13 @@ The ​**product**​ represents attributes of water data.  Specify the type of 
 
 | Product | Description |
 |:--------|:------------|
-| soil_moisture | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `%` <br />**Standard:** `%`
-| veg_height | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `Cubic M` <br />**Standard:** `Acre Ft.`
-| veg_moisture | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `%` <br />**Standard:** `%`
-| snow_accum | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M/s` <br />**Standard:** `Ft./s`
-| snow_density | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `Kg/M^3` <br />**Standard:** `N/A`
-| snow_water | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `cm` <br />**Standard:** `inches`
-| topology | Specifies the minimum number of bytes for a parameter value. The value MUST be equal to or greater than 0.<br /><br />**Metric:** `M (x,y,z)` <br />**Standard:** `Ft. (x,y,z)`
+| soil_moisture | Specifies the percentage of water in the visible soil.<br /><br />**Metric:** `%` <br />**Standard:** `%`
+| veg_height | Specifies the height of the current vegetation.<br /><br />**Metric:** `M` <br />**Standard:** `Ft.`
+| veg_moisture | Specifies the percentage of water in the visible vegetation.<br /><br />**Metric:** `%` <br />**Standard:** `%`
+| snow_accum | Specifies the rate of snow accumulation.<br /><br />**Metric:** `M/s` <br />**Standard:** `Ft./s`
+| snow_density | Specifies the density of the visible snowpack.<br /><br />**Metric:** `Kg/M^3` <br />**Standard:** `N/A`
+| snow_water | Specifies the snow water equivalency.<br /><br />**Metric:** `cm` <br />**Standard:** `inches`
+| topology | Specifies the water topology on top of the soil.<br /><br />**Metric:** `M (x,y,z)` <br />**Standard:** `Ft. (x,y,z)`
 
 
 # Station ID# or Range
@@ -204,3 +204,49 @@ The ​**format** will decide what format the data is sent back in.  The output 
 > 
 > format=json
 > 
+
+# Sample Output
+
+ Sample JSON Output
+
+```yaml
+{
+    {
+    "metadata": {
+        "id": "8454000",
+        "name": "Providence",
+        "lat": "41.8071",
+        "lon": "-71.4012"
+    },
+    "data": [
+        {
+            "t": "2013-08-08 15:00",
+            "v": "72.50",
+            "f": "0,0,0"
+        },
+        {
+            "t": "2013-08-08 15:06",
+            "v": "72.50",
+            "f": "0,0,0"
+        }
+    ]
+}}
+```
+
+
+Sample XML Output
+
+```yaml
+ <?xml version="1.0" encoding="UTF-8" ?> 
+    <data>
+    <metadata id="8454000" name="Providence" lat="41.8071" lon="-71.4012" /> 
+    <observations>
+        <wl t="2013-01-01 10:00" v="0.072" s="0.003" f="0,0,0,0" q="v" /> 
+        <wl t="2013-01-01 10:06" v="0.095" s="0.003" f="0,0,0,0" q="v" /> 
+        <wl t="2013-01-01 10:12" v="0.115" s="0.003" f="0,0,0,0" q="v" /> 
+        <wl t="2013-01-01 10:18" v="0.138" s="0.004" f="0,0,0,0" q="v" /> 
+        <wl t="2013-01-01 10:24" v="0.167" s="0.004" f="0,0,0,0" q="v" /> 
+    </observations>
+    </data>
+```
+ 
