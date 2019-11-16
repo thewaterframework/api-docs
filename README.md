@@ -3,7 +3,7 @@ The Water Framework REST API can deploy vast amounts of data about water, soil, 
 
 ## API Structure
 
-**BASE URL** | **MATERIAL** | **TYPE** | **PRODUCT** | STATION | DATE | UNITS | TIME_ZONE | INTERVAL | FOMAT
+**BASE URL** | **MATERIAL** | **TYPE** | **PRODUCT** | STATION | DATE | UNITS | TIME_ZONE | INTERVAL | FORMAT
 
 ```yaml
 GET:
